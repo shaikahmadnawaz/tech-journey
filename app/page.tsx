@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
+import { ModeToggle } from "@/components/mode-toggle";
 
 function PostCard(post: Post) {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
       <h1 className="mb-8 text-center text-2xl font-black">
         Next.js + Contentlayer Example
       </h1>
+      <ModeToggle />
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
