@@ -10,7 +10,7 @@ const computedFields = {
     type: "string",
     resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
   },
-}
+};
 
 export const Page = defineDocumentType(() => ({
   name: "Page",
@@ -26,6 +26,9 @@ export const Page = defineDocumentType(() => ({
     },
   },
   computedFields,
-}))
+}));
 
-export default makeSource({ contentDirPath: "./content", documentTypes: [Page] });
+export default makeSource({
+  contentDirPath: "./content",
+  documentTypes: [Page],
+});
